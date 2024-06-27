@@ -1,0 +1,12 @@
+<div>
+    <h2>Event List</h2>
+    <button routerLink="/add-event">Add Event</button>
+    <ul>
+      <li *ngFor="let event of events">
+        {{ event.title }} - {{ event.date }}
+        <button (click)="deleteEvent(event._id)">Delete</button>
+        <button [routerLink]="['/edit-event', event._id]">Edit</button>
+      </li>
+    </ul>
+  </div>
+  

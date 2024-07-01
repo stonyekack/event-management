@@ -1,12 +1,16 @@
-<div>
-    <h2>Event List</h2>
-    <button routerLink="/add-event">Add Event</button>
-    <ul>
-      <li *ngFor="let event of events">
-        {{ event.title }} - {{ event.date }}
-        <button (click)="deleteEvent(event._id)">Delete</button>
-        <button [routerLink]="['/edit-event', event._id]">Edit</button>
-      </li>
-    </ul>
-  </div>
-  
+<div class="container mt-4">
+  <mat-card>
+    <mat-card-title>Event List</mat-card-title>
+    <mat-card-content>
+      <button mat-raised-button color="primary" routerLink="/add-event">Add Event</button>
+      <mat-list>
+        <mat-list-item *ngFor="let event of events">
+          <h3 mat-line>{{ event.title }}</h3>
+          <p mat-line>{{ event.date }}</p>
+          <button mat-mini-button color="warn" (click)="deleteEvent(event._id)">Delete</button>
+          <button mat-mini-button color="accent" [routerLink]="['/edit-event', event._id]">Edit</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

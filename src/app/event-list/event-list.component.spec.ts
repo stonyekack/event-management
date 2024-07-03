@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventListComponent } from './event-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 describe('EventListComponent', () => {
   let component: EventListComponent;
@@ -8,7 +11,12 @@ describe('EventListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EventListComponent]
+      declarations: [EventListComponent],
+      imports: [
+        MatCardModule,
+        MatButtonModule,
+        MatListModule
+      ]
     })
     .compileComponents();
 
